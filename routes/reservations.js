@@ -10,4 +10,11 @@ function auth (req, res, next) {
 
 module.exports = router => {
   // put your routes here
+  router.get('/reservations', auth, index);
+  router.get('/reservations/new', auth, _new);
+  router.get('/reservations/:id/edit', auth, edit);
+  router.get('/reservations/:id', auth, show);
+  router.post('/reservations', auth, create);
+  router.post('/reservations/update', auth, update);
+  router.post('/reservations/delete', auth, _delete);
 };
